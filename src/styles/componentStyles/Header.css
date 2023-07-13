@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 16px;
+  height: 56px;
+}
+
+.menu, .searchIcon, .accountIcon {
+  height: 36px;
+}
+
+.ytLogo, .settings {
+  height: 24px;
+}
