@@ -16,13 +16,13 @@ const Header = () => {
   return (
     <div className="header">
       <div className="leftHeader">
-        <span class="material-symbols-outlined menu">menu</span>
+        <span className="material-symbols-outlined menu thin">menu</span>
         <img src={ytLogo} alt="YouTube" className="ytLogo" />
       </div>
       <div className="middleHeader">
         <div className={`searchWrap ${isSearchFocused ? "selectedAction" : ""}`}>
           <div className={`searchIcon ${isSearchFocused ? "active" : ""}`}>
-            <span className="material-symbols-outlined">search</span>
+            <span className="material-symbols-outlined thin">search</span>
           </div>
           <input
             type="text"
@@ -33,13 +33,13 @@ const Header = () => {
           />
         </div>
         <button className="searchBtn">
-          <span class="material-symbols-outlined">search</span>
+          <span className="material-symbols-outlined thin">search</span>
         </button>
       </div>
       <div className="rightHeader">
-        <span class="material-symbols-outlined weight700 dots">more_vert</span>
+        <span className="material-symbols-outlined weight700 dots">more_vert</span>
         <button className="signIn">
-          <span class="material-symbols-outlined actionBlue accountCircle">
+          <span className="material-symbols-outlined actionBlue accountCircle thin">
             account_circle
           </span>
           <p className="signInTxt">Sign in</p>
