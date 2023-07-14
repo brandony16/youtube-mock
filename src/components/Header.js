@@ -1,33 +1,52 @@
-import React from "react";
-import menuIcon from "../assets/menu.svg";
-import ytLogo from "../assets/yt_logo_rgb_light.png"
-import search from "../assets/magnify.svg";
-import dots from "../assets/dots-vertical.svg";
-import account from "../assets/account.png";
+import React, { useState } from "react";
+import ytLogo from "../assets/yt_logo_rgb_light.png";
 import "../styles/componentStyles/Header.css";
 
 const Header = () => {
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
+
+  const handleSearchFocus = () => {
+    setIsSearchFocused(true);
+  };
+
+  const handleSearchBlur = () => {
+    setIsSearchFocused(false);
+  };
+
   return (
     <div className="header">
       <div className="leftHeader">
-        <img src={menuIcon} alt="menu" className="menu" />
+        <span class="material-symbols-outlined menu">menu</span>
         <img src={ytLogo} alt="YouTube" className="ytLogo" />
       </div>
       <div className="middleHeader">
-        <input type="text" className="search" />
+        <div className={`searchWrap ${isSearchFocused ? "selectedAction" : ""}`}>
+          <div className={`searchIcon ${isSearchFocused ? "active" : ""}`}>
+            <span className="material-symbols-outlined">search</span>
+          </div>
+          <input
+            type="text"
+            className={`search`}
+            placeholder="Search"
+            onFocus={handleSearchFocus}
+            onBlur={handleSearchBlur}
+          />
+        </div>
         <button className="searchBtn">
-          <img src={search} alt="search" className="searchIcon" />
+          <span class="material-symbols-outlined">search</span>
         </button>
       </div>
       <div className="rightHeader">
-        <img src={dots} alt="settings" className="settings" />
+        <span class="material-symbols-outlined weight700 dots">more_vert</span>
         <button className="signIn">
-          <img src={account} alt="" className="accountIcon" />
+          <span class="material-symbols-outlined actionBlue accountCircle">
+            account_circle
+          </span>
           <p className="signInTxt">Sign in</p>
         </button>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Header;

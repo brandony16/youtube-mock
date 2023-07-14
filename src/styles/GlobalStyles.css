@@ -2,6 +2,8 @@
 
 :root {
   --actionBlue: #065fd4;
+  --actionHover: #065fd41f;
+  --hoverGrey: rgb(235, 235, 235);
 }
 
 * {
@@ -14,4 +16,19 @@ body, html {
   max-width: 100vw;
   width: 100vw;
   overflow-x: hidden;
+}
+
+.actionBlue {
+  color: var(--actionBlue);
+}
+
+.weight700 {
+  font-weight: 700;
+}
+
+.material-symbols-outlined, .ytLogo {
+  -webkit-user-select: none; 
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none;
 }
