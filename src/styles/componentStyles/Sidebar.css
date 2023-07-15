@@ -1,15 +1,21 @@
 .sidebar {
   width: 240px;
-  box-sizing: border-box;
-  padding: 16px;
   display: flex;
   flex-direction: column;
+  overflow-y: hidden;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.sidebar:hover {
+  overflow-y: scroll;
 }
 
 .sidebarElement {
-  width: 100%;
+  width: 228px;
   border-bottom: 1px solid lightgray;
-  padding: 10px 0px;
+  padding: 10px 12px;
+  box-sizing: border-box;
 }
 
 .sideItemWrap {
@@ -21,7 +27,7 @@
   align-items: center;
   gap: 10px;
   border-radius: 10px;
-  width: 95%;
+  width: 100%;
 }
 
 .sideItemWrap:hover, .activePage {
@@ -45,9 +51,35 @@
 
 .sideItemLabel {
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .sideItemLabel.bold {
   font-weight: 700;
+}
+
+.sideHeader {
+  padding: 0px 18px;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+/* Sign In */
+
+.sideSignIn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 20px;
+  padding-left: 35px;
+  box-sizing: border-box;
+  width: 228px;
+}
+
+/* About */
+.aboutLink {
+  text-decoration: none;
+  color: black;
 }

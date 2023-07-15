@@ -40,3 +40,26 @@ body, html {
 .filled {
   font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 48;
 }
+
+*::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #777777;
+  border-radius: 12px;
+}
+
+*:hover::-webkit-scrollbar-thumb {
+  background: #6e6e6e;
+}
+
+::placeholder {
+  font-weight: 400;
+  font-size: 15px;
+}
