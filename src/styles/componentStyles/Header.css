@@ -51,6 +51,7 @@
   box-sizing: border-box;
   margin-left: 40px;
   box-shadow: inset 0px 1px 2px var(--hoverGrey);
+  position: relative;
 }
 
 .searchWrap.selectedAction {
@@ -126,4 +127,22 @@
 
 .dots {
   cursor: pointer;
+}
+
+.delTxt {
+  width: 30px;
+  aspect-ratio: 1/1;
+  display: grid;
+  place-items: center;
+  margin-right: 2px;
+  opacity: 0;
+}
+
+.delTxt:hover {
+  background-color: var(--hoverGrey);
+  border-radius: 50%;
+}
+
+.delTxt.visible {
+  opacity: 1;
 }

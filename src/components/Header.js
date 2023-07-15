@@ -4,6 +4,7 @@ import "../styles/componentStyles/Header.css";
 
 const Header = () => {
   const [isSearchFocused, setIsSearchFocused] = useState(false);
+  const [search, setSearch] = useState("");
 
   const handleSearchFocus = () => {
     setIsSearchFocused(true);
@@ -20,7 +21,11 @@ const Header = () => {
         <img src={ytLogo} alt="YouTube" className="ytLogo" />
       </div>
       <div className="middleHeader">
-        <div className={`searchWrap ${isSearchFocused ? "selectedAction" : ""}`}>
+        <div
+          className={`searchWrap ${isSearchFocused ? "selectedAction" : ""}`}
+          onFocus={handleSearchFocus}
+          onBlur={handleSearchBlur}
+        >
           <div className={`searchIcon ${isSearchFocused ? "active" : ""}`}>
             <span className="material-symbols-outlined thin">search</span>
           </div>
@@ -28,16 +33,28 @@ const Header = () => {
             type="text"
             className={`search`}
             placeholder="Search"
-            onFocus={handleSearchFocus}
-            onBlur={handleSearchBlur}
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
           />
+          <span
+            className={
+              "material-symbols-outlined thin delTxt " + (search.length > 0
+                ? "visible"
+                : "")
+            }
+            onClick={() => setSearch("")}
+          >
+            close
+          </span>
         </div>
         <button className="searchBtn">
           <span className="material-symbols-outlined thin">search</span>
         </button>
       </div>
       <div className="rightHeader">
-        <span className="material-symbols-outlined weight700 dots">more_vert</span>
+        <span className="material-symbols-outlined weight700 dots">
+          more_vert
+        </span>
         <button className="signIn">
           <span className="material-symbols-outlined actionBlue accountCircle thin">
             account_circle
