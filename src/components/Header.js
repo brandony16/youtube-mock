@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import RightNotUser from "./headerComponents/RightNotUser";
+import RightUser from "./headerComponents/RightUser";
 import ytLogo from "../assets/yt_logo_rgb_light.png";
 import "../styles/componentStyles/Header.css";
 
-const Header = () => {
+const Header = ({ user }) => {
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const [search, setSearch] = useState("");
+  const inputRef = useRef(null);
 
   const handleSearchFocus = () => {
+    inputRef.current.focus();
     setIsSearchFocused(true);
   };
 
@@ -35,6 +39,7 @@ const Header = () => {
             placeholder="Search"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
+            ref={inputRef}
           />
           <span
             className={
@@ -42,26 +47,16 @@ const Header = () => {
                 ? "visible"
                 : "")
             }
-            onClick={() => setSearch("")}
+            onClick={() => {setSearch(""); handleSearchFocus()}}
           >
             close
           </span>
         </div>
-        <button className="searchBtn">
+        <button className="searchBtn tooltip"  data-tooltip="Search">
           <span className="material-symbols-outlined thin">search</span>
         </button>
       </div>
-      <div className="rightHeader">
-        <span className="material-symbols-outlined weight700 dots">
-          more_vert
-        </span>
-        <button className="signIn">
-          <span className="material-symbols-outlined actionBlue accountCircle thin">
-            account_circle
-          </span>
-          <p className="signInTxt">Sign in</p>
-        </button>
-      </div>
+      {user ? <RightUser /> : <RightNotUser />}
     </div>
   );
 };

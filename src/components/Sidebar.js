@@ -8,13 +8,16 @@ import Help from "./sidebarComponents/Help";
 import About from "./sidebarComponents/About";
 import "../styles/componentStyles/Sidebar.css";
 
-const Sidebar = () => {
+const Sidebar = ({ user }) => {
   return (
     <div className="sidebar">
       <VideoTypes />
       <UserSavedVideos />
-      <SideSignIn />
-      <Subscriptions channels={["hi", "how", "are", "you"]}/>
+      {user ? (
+        <Subscriptions channels={["hi", "how", "are", "you"]} />
+      ) : (
+        <SideSignIn />
+      )}
       <Explore />
       <Help />
       <About />

@@ -5,7 +5,7 @@ const Subscriptions = ({ channels }) => {
     <div className="subscriptions sidebarElement">
       <h3 className="sideHeader">Subscriptions</h3>
       {channels.map((channel) => (
-        <div className="sideItemWrap">
+        <div className="sideItemWrap" key={channel}>
           <span className="material-symbols-outlined sideIcon filled">
             account_circle
           </span>

@@ -2,12 +2,12 @@ import React from "react";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 
-const HomePage = () => {
+const HomePage = ({ user }) => {
   return (
     <div className="homePage">
-      <Header />
+      <Header user={user}/>
       <div className="mainBody">
-        <Sidebar />
+        <Sidebar user={user}/>
       </div>
     </div>
   )
