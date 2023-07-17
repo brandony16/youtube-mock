@@ -6,6 +6,7 @@
   overflow-x: hidden;
   height: 100vh;
   box-sizing: border-box;
+  background-color: var(--lightBackground);
 }
 
 .sidebar:hover {

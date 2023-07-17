@@ -4,6 +4,7 @@
   --actionBlue: #065fd4;
   --actionHover: #065fd41f;
   --hoverGrey: rgb(235, 235, 235);
+  --lightBackground: rgb(250, 250, 250);
 }
 
 * {

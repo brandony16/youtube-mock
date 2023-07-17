@@ -1,0 +1,56 @@
+.acctDropdown {
+  position: absolute;
+  top: 83%;
+  right: 2%;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 300px;
+}
+
+.acctInner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.acctItem {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 10px 0px;
+  border-bottom: 1px solid var(--hoverGrey);
+}
+
+.acctItem.topItem {
+  padding: 10px 20px;
+}
+
+.acctOption {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  padding: 5px 20px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.acctOption:hover {
+  background-color: var(--hoverGrey);
+}
+
+.username {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.email {
+  font-size: 0.9rem;
+}
+
+.acctImg {
+  width: 40px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
