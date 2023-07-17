@@ -10,7 +10,7 @@ const HomePage = ({ user }) => {
       <Header user={user}/>
       <div className="mainBody">
         <Sidebar user={user}/>
-        <DisplayMainVideos videos={["hi", "how", "are", "you", "I", "am", "good"]}/>
+        <DisplayMainVideos />
       </div>
     </div>
   )
