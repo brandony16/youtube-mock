@@ -3,6 +3,7 @@ import "../../styles/componentStyles/VideoPrev.css";
 
 const VideoPrev = ({ video }) => {
   const findHowLongAgo = () => {
+    console.log(video);
     const publishedAt = new Date(video.snippet.publishedAt);
     const currentDate = new Date();
     const timeDifference = currentDate.getTime() - publishedAt.getTime();
@@ -42,13 +43,15 @@ const VideoPrev = ({ video }) => {
 
   return (
     <div className="videoWrap">
-      <img
-        src={video.snippet.thumbnails.high.url}
-        alt=""
-        className="thumbnail"
-      />
+      <div className="thumbnailWrap">
+        <img
+          src={video.snippet.thumbnails.high.url}
+          alt={video.snippet.title}
+          className="thumbnail"
+        />
+      </div>
       <div className="videoInfo">
-        <img src="" alt="" className="videoChannel" />
+        <img src={video.channelImage} alt={video.snippet.channelTitle} className="videoChannel" />
         <h4 className="videoTitle">{video.snippet.title}</h4>
         <div className="videoSubInfo">
           <p className="channelName subTxt">{video.snippet.channelTitle}</p>

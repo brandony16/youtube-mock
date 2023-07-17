@@ -45,6 +45,7 @@ body, html {
 *::-webkit-scrollbar {
   width: 8px;
   border-radius: 5px;
+  z-index: 1000;
 }
 
 *::-webkit-scrollbar-track {

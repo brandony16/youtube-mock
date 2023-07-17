@@ -17,11 +17,19 @@
   border-radius: 100%;
 }
 
-.thumbnail {
+.thumbnailWrap {
   width: 100%;
-  height: 200px;
-  background-color: pink;
-  border-radius: 10px;
+  padding-bottom: 56.25%;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.thumbnail {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .videoSubInfo {
@@ -35,6 +43,7 @@
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  font-weight: 500;
 }
 
 .subTxt {
