@@ -1,0 +1,48 @@
+.videoWrap {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.videoInfo {
+  box-sizing: border-box;
+  padding: 8px 0px;
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+}
+
+.videoChannel {
+  width: 40px;
+  aspect-ratio: 1/1;
+  background-color: red;
+  border-radius: 100%;
+}
+
+.thumbnail {
+  width: 100%;
+  height: 200px;
+  background-color: pink;
+  border-radius: 10px;
+}
+
+.videoSubInfo {
+  grid-column: 2/3;
+}
+
+.videoTitle {
+  font-size: 1.2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.subTxt {
+  color: gray;
+  font-size: 0.9rem;
+}
+
+.timeViews {
+  display: flex;
+  gap: 4px;
+}

@@ -1,6 +1,6 @@
 import React from "react";
 
-const RightUser = () => {
+const RightUser = ({ user }) => {
   return (
     <div className="rightHeader userInfo">
       <div className="tooltip" data-tooltip="Create">
@@ -13,9 +13,7 @@ const RightUser = () => {
           notifications
         </span>
       </div>
-      <span className="material-symbols-outlined userIcon filled">
-        account_circle
-      </span>
+      <img src={user.photoURL} alt="user" className="userIcon filled"/>
     </div>
   );
 };

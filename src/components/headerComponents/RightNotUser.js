@@ -1,6 +1,17 @@
 import React from "react";
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { auth } from "../../firebase/firebaseConfig";
 
 const RightNotUser = () => {
+  const handleSignInWithGoogle = async () => {
+    try {
+      const provider = new GoogleAuthProvider();
+      await signInWithPopup(auth, provider);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div className="rightHeader">
       <div className="tooltip" data-tooltip="Settings">
@@ -8,7 +19,7 @@ const RightNotUser = () => {
           more_vert
         </span>
       </div>
-      <button className="signIn">
+      <button className="signIn" onClick={handleSignInWithGoogle}>
         <span className="material-symbols-outlined actionBlue accountCircle thin">
           account_circle
         </span>

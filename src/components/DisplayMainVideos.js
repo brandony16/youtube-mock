@@ -1,5 +1,6 @@
 import React from "react";
 import VideoPrev from "./videoComponents/VideoPrev";
+import "../styles/componentStyles/DisplayMainPage.css";
 
 const DisplayMainVideos = ({ videos }) => {
   return (

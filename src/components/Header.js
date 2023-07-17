@@ -56,7 +56,7 @@ const Header = ({ user }) => {
           <span className="material-symbols-outlined thin">search</span>
         </button>
       </div>
-      {user ? <RightUser /> : <RightNotUser />}
+      {user ? <RightUser user={user} /> : <RightNotUser />}
     </div>
   );
 };
