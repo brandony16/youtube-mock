@@ -6,6 +6,7 @@
   height: 56px;
   background-color: var(--lightBackground);
   width: 100%;
+  box-sizing: border-box;
 } 
 
 .leftHeader {

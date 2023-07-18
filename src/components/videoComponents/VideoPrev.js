@@ -3,7 +3,6 @@ import "../../styles/componentStyles/VideoPrev.css";
 
 const VideoPrev = ({ video }) => {
   const findHowLongAgo = () => {
-    console.log(video);
     const publishedAt = new Date(video.snippet.publishedAt);
     const currentDate = new Date();
     const timeDifference = currentDate.getTime() - publishedAt.getTime();
