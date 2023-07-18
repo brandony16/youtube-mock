@@ -4,6 +4,7 @@ import { auth } from "./firebase/firebaseConfig";
 import HomePage from "./pages/HomePage";
 import "./styles/GlobalStyles.css";
 import { useEffect, useState } from "react";
+import SearchPage from "./pages/SearchPage";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -23,7 +24,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage user={user}/>}/>
+        <Route path="/" element={<SearchPage user={user}/>}/>
       </Routes>
     </BrowserRouter>
   );
