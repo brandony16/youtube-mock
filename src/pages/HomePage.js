@@ -9,7 +9,7 @@ const HomePage = ({ user, setKeyword }) => {
     <div className="homePage">
       <Header user={user} setKeyword={setKeyword}/>
       <div className="mainBody">
-        <Sidebar user={user}/>
+        <Sidebar user={user} isHome={true}/>
         <DisplayMainVideos />
       </div>
     </div>

@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import "./styles/GlobalStyles.css";
 import { useEffect, useState } from "react";
 import SearchPage from "./pages/SearchPage";
+import VideoPage from "./pages/VideoPage";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -26,6 +27,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage user={user} />}/>
         <Route path="/search/:keyword" element={<SearchPage user={user} />} />
+        <Route path="/watch/:video" element={<VideoPage user={user}/>} />
       </Routes>
     </BrowserRouter>
   );

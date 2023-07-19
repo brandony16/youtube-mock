@@ -30,6 +30,8 @@
   gap: 10px;
   border-radius: 10px;
   width: 95%;
+  color: black;
+  text-decoration: none;
 }
 
 .sideItemWrap:hover, .activePage {

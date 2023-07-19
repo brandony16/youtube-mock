@@ -8,10 +8,10 @@ import Help from "./sidebarComponents/Help";
 import About from "./sidebarComponents/About";
 import "../styles/componentStyles/Sidebar.css";
 
-const Sidebar = ({ user }) => {
+const Sidebar = ({ user, isHome }) => {
   return (
     <div className="sidebar">
-      <VideoTypes />
+      <VideoTypes isHome={isHome}/>
       <UserSavedVideos />
       {user ? (
         <Subscriptions channels={["hi", "how", "are", "you"]} />
