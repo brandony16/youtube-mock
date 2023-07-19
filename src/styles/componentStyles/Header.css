@@ -84,14 +84,20 @@
 
 .searchBtn {
   height: 100%;
-  border: none;
   width: 12%;
   border-left: 1px solid lightgray;
   background-color: whitesmoke;
   border-radius: 0px 40px 40px 0px;
   border: 1px solid lightgray;
   border-left: none;
+  box-sizing: border-box;
   overflow: hidden;
+  text-decoration: none;
+  color: black;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .searchBtn:hover {
@@ -173,7 +179,6 @@
 
 .tooltip {
   position: relative;
-  display: inline-block;
   overflow: visible;
 }
 

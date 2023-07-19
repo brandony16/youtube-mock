@@ -3,8 +3,9 @@ import RightNotUser from "./headerComponents/RightNotUser";
 import RightUser from "./headerComponents/RightUser";
 import ytLogo from "../assets/yt_logo_rgb_light.png";
 import "../styles/componentStyles/Header.css";
+import { NavLink } from "react-router-dom";
 
-const Header = ({ user }) => {
+const Header = ({ user, setKeyword }) => {
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const [search, setSearch] = useState("");
   const inputRef = useRef(null);
@@ -22,7 +23,9 @@ const Header = ({ user }) => {
     <div className="header">
       <div className="leftHeader">
         <span className="material-symbols-outlined menu thin">menu</span>
-        <img src={ytLogo} alt="YouTube" className="ytLogo" />
+        <NavLink to="/" className="ytLogoLink">
+          <img src={ytLogo} alt="YouTube" className="ytLogo" />
+        </NavLink>
       </div>
       <div className="middleHeader">
         <div
@@ -43,18 +46,27 @@ const Header = ({ user }) => {
           />
           <span
             className={
-              "material-symbols-outlined thin delTxt " + (search.length > 0
-                ? "visible"
-                : "")
+              "material-symbols-outlined thin delTxt " +
+              (search.length > 0 ? "visible" : "")
             }
-            onClick={() => {setSearch(""); handleSearchFocus()}}
+            onClick={() => {
+              setSearch("");
+              handleSearchFocus();
+            }}
           >
             close
           </span>
         </div>
-        <button className="searchBtn tooltip"  data-tooltip="Search">
-          <span className="material-symbols-outlined thin">search</span>
-        </button>
+        <NavLink
+          to={"/search/" + search}
+          className="searchBtn tooltip"
+          data-tooltip="Search"
+          onClick={() => setKeyword(search)}
+        >
+          <span className="material-symbols-outlined thin searchBtnIcon">
+            search
+          </span>
+        </NavLink>
       </div>
       {user ? <RightUser user={user} /> : <RightNotUser />}
     </div>

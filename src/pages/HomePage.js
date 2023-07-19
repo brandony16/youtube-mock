@@ -4,10 +4,10 @@ import Sidebar from "../components/Sidebar";
 import DisplayMainVideos from "../components/DisplayMainVideos";
 import "../styles/pageStyles/HomePage.css";
 
-const HomePage = ({ user }) => {
+const HomePage = ({ user, setKeyword }) => {
   return (
     <div className="homePage">
-      <Header user={user}/>
+      <Header user={user} setKeyword={setKeyword}/>
       <div className="mainBody">
         <Sidebar user={user}/>
         <DisplayMainVideos />

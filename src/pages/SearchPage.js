@@ -6,13 +6,13 @@ import DisplaySearchResults from "../components/DisplaySearchResults";
 const SearchPage = ({ user }) => {
   return (
     <div className="homePage">
-      <Header />
+      <Header user={user} />
       <div className="mainBody">
-        <Sidebar user={user}/>
-        <DisplaySearchResults videos={["hi", "how", "are", "you"]}/>
+        <Sidebar user={user} />
+        <DisplaySearchResults />
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default SearchPage;

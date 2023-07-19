@@ -39,7 +39,7 @@ const DisplayMainVideos = () => {
             API_KEY
           );
 
-          setVideos((prevVideos) => [...prevVideos, ...videosWithDetails]);
+          setVideos([...videosWithDetails]);
           setIsLoaded(true);
         } catch (error) {
           console.error("Error fetching videos:", error);

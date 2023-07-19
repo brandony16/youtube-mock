@@ -24,7 +24,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<SearchPage user={user}/>}/>
+        <Route path="/" element={<HomePage user={user} />}/>
+        <Route path="/search/:keyword" element={<SearchPage user={user} />} />
       </Routes>
     </BrowserRouter>
   );
