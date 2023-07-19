@@ -1,0 +1,64 @@
+.searchVideo {
+  width: 60%;
+  display: flex;
+  height: 175px;
+  gap: 10px;
+}
+
+.searchThumbnail {
+  height: 100%;
+  aspect-ratio: 16/9;
+  background-color: gray;
+  border-radius: 8px;
+}
+
+.searchVideoInfo {
+  box-sizing: border-box;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.topSearchInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.searchTitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.subTxt.searchTxt {
+  font-size: 0.8rem;
+  width: fit-content;
+  height: 0.8rem;
+}
+
+.searchChannelIcon {
+  font-size: 1.5rem;
+  height: 1.5rem;
+  aspect-ratio: 1/1;
+}
+
+.searchCheckIcon {
+  font-size: 1rem;
+  height: 1rem;
+  aspect-ratio: 1/1;
+  color: grey;
+}
+
+.channelSearchInfo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.searchDesc, .searchTitle {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}

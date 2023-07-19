@@ -1,16 +1,15 @@
 import React from "react";
 import SearchVideo from "./videoComponents/SearchVideo";
+import "../styles/componentStyles/DisplaySearchResults.css";
 
 const DisplaySearchResults = ({ videos }) => {
   return (
     <div className="searchResults">
-      <div className="videoResults">
-        {videos.map((video) => (
-          <SearchVideo key={video} />
-        ))}
-      </div>
+      {videos.map((video) => (
+        <SearchVideo key={video} />
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default DisplaySearchResults
+export default DisplaySearchResults;
