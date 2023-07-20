@@ -1,0 +1,7 @@
+.displayVideo {
+  background-color: var(--lightBackground);
+  width: 100vw;
+  min-height: 92vh;
+  display: flex;
+  justify-content: center;
+}

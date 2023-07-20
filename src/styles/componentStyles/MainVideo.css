@@ -1,0 +1,22 @@
+.mainVideo {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  gap: 20px;
+}
+
+.video {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background-color: aquamarine;
+}
+
+.mainVideoInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mainVideoTitle {
+  font-size: 1.3rem;
+}

@@ -1,0 +1,52 @@
+.videoAnalytics {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.videoAnalyticsLeft {
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  gap: 4px;
+}
+
+.mainVideoChannelInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mainVideoChannel {
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px
+}
+
+.verifiedCheck {
+  color: grey;
+  font-size: 1rem;
+}
+
+.videoChannelIcon {
+  font-size: 3.3rem;
+  width: 3.3rem;
+  aspect-ratio: 1/1;
+}
+
+.subscribe {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.subscribe:hover {
+  background-color: rgb(45, 45, 45);
+}
