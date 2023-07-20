@@ -50,3 +50,45 @@
 .subscribe:hover {
   background-color: rgb(45, 45, 45);
 }
+
+.videoAnalyticsRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.analyticWrap, .more {
+  display: flex;
+  background-color: var(--infoGrey);
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.analyticWrap.normWrap, .more {
+  padding: 8px 10px;
+}
+
+.likesLeft {
+  display: flex;
+  gap: 4px;
+  border-right: 1px solid rgb(204, 203, 203);
+  justify-content: center;
+  align-items: center;
+  padding: 8px 10px;
+  padding-right: 15px;
+}
+
+.dislike {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 20px;
+  padding-left: 15px;
+}
+
+.likesLeft:hover, .analyticWrap.normWrap:hover, .dislike:hover, .more:hover {
+  background-color: rgb(220, 220, 220);
+  cursor: pointer;
+}

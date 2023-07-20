@@ -1,0 +1,64 @@
+.videoDescription {
+  background-color: var(--infoGrey);
+  width: 100%;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-bottom: 20px;
+}
+
+.topDesc {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+.topDescTxt {
+  font-weight: bold;
+}   
+
+.tags {
+  color: var(--linkBlue);
+  cursor: pointer;
+}
+
+.mainDesc {
+  padding-bottom: 10px;
+}
+
+.descChannelIcon {
+  font-size: 5rem;
+  width: 5rem;
+  aspect-ratio: 1/1;
+}
+
+.descChannel {
+  font-size: 1.2rem;
+}
+
+.descBtnsWrap {
+  display: flex;
+  gap: 10px;
+}
+
+.descBtnWrap {
+  border: 1px solid rgb(210, 210, 210);
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 100px;
+  border-radius: 20px;
+}
+
+.descBtnWrap:hover {
+  background-color: rgb(210, 210, 210);
+  cursor: pointer;
+}
+
+.btmDescTxt {
+  font-size: 0.9rem;
+}

@@ -2,6 +2,7 @@ import React from "react";
 import VideoAnalytics from "./VideoAnalytics";
 import VideoDescription from "./VideoDescription";
 import "../../styles/componentStyles/MainVideo.css";
+import Comments from "./Comments";
 
 const MainVideo = () => {
   return (
@@ -12,6 +13,7 @@ const MainVideo = () => {
         <VideoAnalytics />
         <VideoDescription />
       </div>
+      <Comments />
     </div>
   );
 };
