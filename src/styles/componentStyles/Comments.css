@@ -1,0 +1,98 @@
+.comments {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.commentInfo {
+  display: flex;
+  gap: 40px;
+}
+
+.sortBy {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+.sortByTxt {
+  font-size: 0.9rem;
+}
+
+.userComment {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+.commentAcct {
+  font-size: 3rem;
+  width: 3rem;
+  aspect-ratio: 1/1;
+}
+
+.userCommentBody {
+  width: 100%;
+}
+
+.addComment {
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid rgb(220, 220, 220);
+  width: 100%;
+  padding-bottom: 6px;
+}
+
+.commentHead {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+}
+
+.handle {
+  font-size: 0.8rem;
+}
+
+.commentTxt {
+  font-size: 0.9rem;
+  padding: 10px 0px;
+}
+
+.commentSubTxt {
+  font-size: 0.8rem;
+  color: grey;
+}
+
+.commentFooter {
+  display: flex;
+  align-items: center;
+  margin-top: -8px;
+  margin-left: -8px;
+}
+
+.commentIcon {
+  font-size: 1.2rem;
+  border-radius: 20px;
+  padding: 8px;
+}
+
+.commentIcon:hover, .reply:hover {
+  background-color: var(--hoverGrey);
+  cursor: pointer;
+}
+
+.commentDislike {
+  margin-left: 10px;
+}
+
+.reply {
+  font-size: 0.8rem;
+  border-radius: 20px;
+  padding: 8px 10px;
+  margin-left: 10px;
+}

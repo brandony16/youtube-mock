@@ -27,7 +27,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage user={user} />}/>
         <Route path="/search/:keyword" element={<SearchPage user={user} />} />
-        <Route path="/watch/:video" element={<VideoPage user={user}/>} />
+        <Route path="/watch/:videoId" element={<VideoPage user={user}/>} />
       </Routes>
     </BrowserRouter>
   );

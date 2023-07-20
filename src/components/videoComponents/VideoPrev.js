@@ -1,5 +1,6 @@
 import React from "react";
 import "../../styles/componentStyles/VideoPrev.css";
+import { NavLink } from "react-router-dom";
 
 const VideoPrev = ({ video }) => {
   const findHowLongAgo = () => {
@@ -41,7 +42,7 @@ const VideoPrev = ({ video }) => {
   };
 
   return (
-    <div className="videoWrap">
+    <NavLink to={`/watch/${video.id}`} className="videoWrap">
       <div className="thumbnailWrap">
         <img
           src={video.snippet.thumbnails.high.url}
@@ -50,18 +51,24 @@ const VideoPrev = ({ video }) => {
         />
       </div>
       <div className="videoInfo">
-        <img src={video.channelImage} alt={video.snippet.channelTitle} className="videoChannel" />
+        <img
+          src={video.channelImage}
+          alt={video.snippet.channelTitle}
+          className="videoChannel"
+        />
         <h4 className="videoTitle">{video.snippet.title}</h4>
         <div className="videoSubInfo">
           <p className="channelName subTxt">{video.snippet.channelTitle}</p>
           <div className="timeViews">
-            <p className="views subTxt">{formatViews(video.statistics.viewCount)}</p>
+            <p className="views subTxt">
+              {formatViews(video.statistics.viewCount)}
+            </p>
             <p className="dot subTxt">&#x2022;</p>
             <p className="postDate subTxt">{findHowLongAgo()}</p>
           </div>
         </div>
       </div>
-    </div>
+    </NavLink>
   );
 };
 

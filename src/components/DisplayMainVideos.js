@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import VideoPrev from "./videoComponents/VideoPrev";
 import "../styles/componentStyles/DisplayMainPage.css";
 import axios from "axios";
