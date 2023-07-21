@@ -6,7 +6,7 @@ const VideoPage = ({ user }) => {
   return (
     <div className="videoPage">
       <Header user={user}/>
-      <DisplayVideo />
+      <DisplayVideo user={user} />
     </div>
   )
 }

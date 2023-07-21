@@ -2,10 +2,10 @@ import React from "react";
 import MainVideo from "./videoComponents/MainVideo";
 import "../styles/componentStyles/DisplayVideo.css";
 
-const DisplayVideo = ({ video }) => {
+const DisplayVideo = ({ user }) => {
   return (
     <div className="displayVideo">
-      <MainVideo />
+      <MainVideo user={user} />
     </div>
   )
 }
