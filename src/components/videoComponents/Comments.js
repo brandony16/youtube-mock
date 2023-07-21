@@ -13,11 +13,11 @@ const Comments = ({ user, comments }) => {
         </div>
       </div>
       <div className="userComment">
-      <img
+      {user && <img
         src={user.photoURL}
         alt={user.displayName}
         className="commentAcct filled"
-      />
+      />}
         <div className="userCommentBody">
           <input
             type="text"
@@ -27,7 +27,7 @@ const Comments = ({ user, comments }) => {
         </div>
       </div>
       {comments.map((comment) => (
-        <Comment key={comment} comment={comment} />
+        <Comment key={comment.id} comment={comment} />
       ))}
     </div>
   );

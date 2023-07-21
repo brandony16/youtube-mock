@@ -2,7 +2,9 @@ import React from "react";
 
 const Comment = ({ comment }) => {
   const findHowLongAgo = () => {
-    const publishedAt = new Date(comment.snippet.topLevelComment.snippet.publishedAt);
+    const publishedAt = new Date(
+      comment.snippet.topLevelComment.snippet.publishedAt
+    );
     const currentDate = new Date();
     const timeDifference = currentDate.getTime() - publishedAt.getTime();
     const secondsAgo = Math.floor(timeDifference / 1000);
@@ -42,7 +44,7 @@ const Comment = ({ comment }) => {
   return (
     <div className="userComment">
       <img
-        class="material-symbols-outlined thin commentAcct"
+        className="material-symbols-outlined thin commentAcct"
         src={comment.snippet.topLevelComment.snippet.authorProfileImageUrl}
         alt={comment.snippet.topLevelComment.snippet.authorDisplayName}
       />
@@ -51,20 +53,25 @@ const Comment = ({ comment }) => {
           <p className="handle bold">
             {comment.snippet.topLevelComment.snippet.authorDisplayName}
           </p>
-          <span class="material-symbols-outlined thin commentSubTxt">
+          <span className="material-symbols-outlined thin commentSubTxt">
             check
           </span>
           <p className="commentAgo commentSubTxt">{findHowLongAgo()}</p>
         </div>
-        <p className="commentTxt">
-          {comment.snippet.topLevelComment.snippet.textDisplay}
-        </p>
+        <p
+          className="commentTxt"
+          dangerouslySetInnerHTML={{
+            __html: comment.snippet.topLevelComment.snippet.textDisplay,
+          }}
+        ></p>
         <div className="commentFooter">
-          <span class="material-symbols-outlined thin commentIcon">
+          <span className="material-symbols-outlined thin commentIcon">
             thumb_up
           </span>
-          <p className="commentSubTxt">{formatNums(comment.snippet.topLevelComment.snippet.likeCount)}</p>
-          <span class="material-symbols-outlined thin commentIcon commentDislike">
+          <p className="commentSubTxt">
+            {formatNums(comment.snippet.topLevelComment.snippet.likeCount)}
+          </p>
+          <span className="material-symbols-outlined thin commentIcon commentDislike">
             thumb_down
           </span>
           <p className="handle bold reply">Reply</p>
