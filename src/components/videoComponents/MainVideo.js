@@ -8,7 +8,7 @@ import axios from "axios";
 
 const MainVideo = () => {
   const [videoData, setVideoData] = useState(null);
-  const videoId = useParams();
+  const { videoId } = useParams();
 
   useEffect(() => {
     const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
@@ -26,7 +26,7 @@ const MainVideo = () => {
         );
 
         setVideoData(response.data.items[0]);
-        console.log(response.data.items[0]);  
+        console.log(response.data.items[0]);
       } catch (error) {
         console.error("Error fetching video data:", error);
       }
@@ -38,16 +38,16 @@ const MainVideo = () => {
   if (!videoData) {
     return <div>Loading...</div>;
   }
-  
+
   return (
     <div className="mainVideo">
       <video src="" className="video"></video>
       <div className="mainVideoInfo">
-        <h3 className="mainVideoTitle">Placeholder</h3>
-        <VideoAnalytics />
-        <VideoDescription />
+        <h3 className="mainVideoTitle">{videoData.snippet.title}</h3>
+        <VideoAnalytics video={videoData} />
+        <VideoDescription video={videoData} />
       </div>
-      <Comments comments={["hi", "how", "are", "you"]}/>
+      <Comments comments={["hi", "how", "are", "you"]} />
     </div>
   );
 };

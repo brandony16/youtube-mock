@@ -96,7 +96,7 @@ const DisplayMainVideos = () => {
       {videos.map((video) => (
         <VideoPrev video={video} key={videos.indexOf(video)} />
       ))}
-      <div id="loading">{loading && "Loading..."}</div>
+      {loading && <div id="loading">Loading...</div>}
     </div>
   );
 };

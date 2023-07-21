@@ -15,10 +15,6 @@
   font-family: "Roboto", Arial, sans-serif;
 }
 
-a {
-  cursor: pointer;
-}
-
 body, html {
   max-width: 100vw;
   width: 100vw;
