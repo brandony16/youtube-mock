@@ -22,7 +22,7 @@ const AcctDropdown = ({ user }) => {
       </div>
       <div className="acctItem">
         <div className="acctOption" onClick={handleSignOut}>
-          <span class="material-symbols-outlined thin">login</span>
+          <span className="material-symbols-outlined thin">login</span>
           <p className="signOut">Sign Out</p>
         </div>
       </div>

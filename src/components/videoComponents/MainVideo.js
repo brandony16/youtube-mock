@@ -59,7 +59,8 @@ const MainVideo = ({ user }) => {
             },
           }
         );
-
+        console.log(commentsResponse)
+        console.log(videoData)
         setComments(commentsResponse.data.items);
       } catch (error) {
         console.error("Error fetching video data:", error);
@@ -88,7 +89,7 @@ const MainVideo = ({ user }) => {
         <VideoAnalytics video={videoData} />
         <VideoDescription video={videoData} />
       </div>
-      <Comments comments={comments} user={user} />
+      <Comments comments={comments} user={user} commentAmount={videoData.statistics.commentCount}/>
     </div>
   );
 };

@@ -6,6 +6,7 @@
   border-radius: 8px;
   overflow: hidden;
   width: 300px;
+  z-index: 100;
 }
 
 .acctInner {

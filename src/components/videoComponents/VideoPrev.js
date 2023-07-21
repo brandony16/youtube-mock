@@ -42,7 +42,7 @@ const VideoPrev = ({ video }) => {
   };
 
   return (
-    <NavLink to={`/watch/${video.id}`} className="videoWrap" onClick={() => console.log("clicked")}>
+    <NavLink to={`/watch/${video.id}`} className="videoWrap">
       <div className="thumbnailWrap">
         <img
           src={video.snippet.thumbnails.high.url}
