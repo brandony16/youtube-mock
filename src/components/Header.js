@@ -3,11 +3,12 @@ import RightNotUser from "./headerComponents/RightNotUser";
 import RightUser from "./headerComponents/RightUser";
 import ytLogo from "../assets/yt_logo_rgb_light.png";
 import "../styles/componentStyles/Header.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
-const Header = ({ user, setKeyword }) => {
+const Header = ({ user }) => {
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const [search, setSearch] = useState("");
+  const navigate = useNavigate();
   const inputRef = useRef(null);
 
   const handleSearchFocus = () => {
@@ -19,6 +20,18 @@ const Header = ({ user, setKeyword }) => {
     setIsSearchFocused(false);
   };
 
+  const performSearch = () => {
+    if (search.trim() !== "") {
+      navigate(`/search/${encodeURIComponent(search)}`);
+    } 
+  };
+
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      performSearch();
+    }
+  };
+  
   return (
     <div className="header">
       <div className="leftHeader">
@@ -43,6 +56,7 @@ const Header = ({ user, setKeyword }) => {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             ref={inputRef}
+            onKeyUp={(e) => {if (isSearchFocused) handleKeyPress(e)}}
           />
           <span
             className={
@@ -57,16 +71,15 @@ const Header = ({ user, setKeyword }) => {
             close
           </span>
         </div>
-        <NavLink
-          to={"/search/" + search}
+        <div
           className="searchBtn tooltip"
           data-tooltip="Search"
-          onClick={() => setKeyword(search)}
+          onClick={performSearch()}
         >
           <span className="material-symbols-outlined thin searchBtnIcon">
             search
           </span>
-        </NavLink>
+        </div>
       </div>
       {user ? <RightUser user={user} /> : <RightNotUser />}
     </div>
