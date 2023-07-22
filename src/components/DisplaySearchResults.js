@@ -88,7 +88,7 @@ const DisplaySearchResults = () => {
     };
 
     fetchVideos();
-  }, [keyword]);
+  }, [keyword, videos]);
 
   return (
     <div className="searchResults">

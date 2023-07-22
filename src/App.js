@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import SearchPage from "./pages/SearchPage";
 import VideoPage from "./pages/VideoPage";
 
-function App() {
+const App = () => {
   const [user, setUser] = useState(null);
   const [isCollapsed, setIsCollapsed] = useState(false);
 

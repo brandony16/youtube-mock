@@ -93,7 +93,7 @@ const DisplayMainVideos = () => {
 
       fetchVideos();
     }
-  }, []);
+  });
 
   return (
     <div className="displayMainVideos">

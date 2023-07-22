@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import RightNotUser from "./headerComponents/RightNotUser";
 import RightUser from "./headerComponents/RightUser";
 import ytLogo from "../assets/yt_logo_rgb_light.png";
