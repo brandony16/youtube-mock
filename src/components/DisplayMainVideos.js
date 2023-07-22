@@ -30,7 +30,8 @@ const DisplayMainVideos = () => {
           );
 
           const newVideos = response.data.items.filter(
-            (video) => !videos.some((existingVideo) => existingVideo.etag === video.etag)
+            (video) =>
+              !videos.some((existingVideo) => existingVideo.etag === video.etag)
           );
 
           const videoIds = newVideos.map((video) => video.id.videoId);
@@ -75,9 +76,12 @@ const DisplayMainVideos = () => {
                 },
               }
             );
-            const channelImage =
-              channelResponse.data?.items[0]?.snippet?.thumbnails?.default?.url;
-            video.channelImage = channelImage;
+            if (channelResponse.data.items) {
+              const channelImage =
+                channelResponse.data?.items[0]?.snippet?.thumbnails?.default
+                  ?.url;
+              video.channelImage = channelImage;
+            }
           }
 
           return videos;

@@ -5,7 +5,7 @@ import ytLogo from "../assets/yt_logo_rgb_light.png";
 import "../styles/componentStyles/Header.css";
 import { NavLink, useNavigate } from "react-router-dom";
 
-const Header = ({ user }) => {
+const Header = ({ user, setIsCollapsed }) => {
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
@@ -35,7 +35,7 @@ const Header = ({ user }) => {
   return (
     <div className="header">
       <div className="leftHeader">
-        <span className="material-symbols-outlined menu thin">menu</span>
+        <span className="material-symbols-outlined menu thin" onClick={() => setIsCollapsed((prev) => !prev)}>menu</span>
         <NavLink to="/" className="ytLogoLink">
           <img src={ytLogo} alt="YouTube" className="ytLogo" />
         </NavLink>

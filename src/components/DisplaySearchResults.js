@@ -92,7 +92,7 @@ const DisplaySearchResults = () => {
   return (
     <div className="searchResults">
       {videos.map((video) => (
-        <SearchVideo key={video.etag} video={video} />
+        <SearchVideo key={video.etag + videos.indexOf(video)} video={video} />
       ))}
     </div>
   );

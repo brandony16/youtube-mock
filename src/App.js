@@ -9,6 +9,7 @@ import VideoPage from "./pages/VideoPage";
 
 function App() {
   const [user, setUser] = useState(null);
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -25,8 +26,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage user={user} />}/>
-        <Route path="/search/:keyword" element={<SearchPage user={user} />} />
+        <Route path="/" element={<HomePage user={user} isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />}/>
+        <Route path="/search/:keyword" element={<SearchPage user={user} isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />} />
         <Route path="/watch/:videoId" element={<VideoPage user={user}/>} />
       </Routes>
     </BrowserRouter>

@@ -1,0 +1,25 @@
+.collapsedSidebar {
+  background-color: var(--lightBackground);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  height: 92vh;
+  width: 75px;
+  padding: 20px 0px;
+  box-sizing: border-box;
+}
+
+.collapsedItemWrap {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.collapsedItemLabel {
+  font-size: 0.6rem;
+  font-weight: 500;
+}
