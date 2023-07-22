@@ -24,13 +24,15 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage user={user} isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />}/>
-        <Route path="/search/:keyword" element={<SearchPage user={user} isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />} />
-        <Route path="/watch/:videoId" element={<VideoPage user={user}/>} />
-      </Routes>
-    </BrowserRouter>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage user={user} isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />}/>
+          <Route path="/search/:keyword" element={<SearchPage user={user} isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />} />
+          <Route path="/watch/:videoId" element={<VideoPage user={user} setIsCollapsed={setIsCollapsed}/>} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import RightNotUser from "./headerComponents/RightNotUser";
 import RightUser from "./headerComponents/RightUser";
 import ytLogo from "../assets/yt_logo_rgb_light.png";
@@ -20,27 +20,25 @@ const Header = ({ user, setIsCollapsed }) => {
     setIsSearchFocused(false);
   };
 
-  const performSearch = () => {
-    if (search.trim() !== "") {
-      navigate(`/search/${encodeURIComponent(search)}`);
-    } 
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    navigate(`/search/${search}`);
   };
 
-  const handleKeyPress = (event) => {
-    if (event.key === "Enter") {
-      performSearch();
-    }
-  };
-  
   return (
     <div className="header">
       <div className="leftHeader">
-        <span className="material-symbols-outlined menu thin" onClick={() => setIsCollapsed((prev) => !prev)}>menu</span>
+        <span
+          className="material-symbols-outlined menu thin"
+          onClick={() => setIsCollapsed((prev) => !prev)}
+        >
+          menu
+        </span>
         <NavLink to="/" className="ytLogoLink">
           <img src={ytLogo} alt="YouTube" className="ytLogo" />
         </NavLink>
       </div>
-      <div className="middleHeader">
+      <form onSubmit={handleSearchSubmit} className="middleHeader">
         <div
           className={`searchWrap ${isSearchFocused ? "selectedAction" : ""}`}
           onFocus={handleSearchFocus}
@@ -56,7 +54,11 @@ const Header = ({ user, setIsCollapsed }) => {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             ref={inputRef}
-            onKeyUp={(e) => {if (isSearchFocused) handleKeyPress(e)}}
+            onKeyUp={(e) => {
+              if (isSearchFocused && e.key === "Enter") {
+                handleSearchSubmit(e);
+              }
+            }}
           />
           <span
             className={
@@ -71,16 +73,16 @@ const Header = ({ user, setIsCollapsed }) => {
             close
           </span>
         </div>
-        <div
+        <button
+          type="submit"
           className="searchBtn tooltip"
           data-tooltip="Search"
-          onClick={performSearch()}
         >
           <span className="material-symbols-outlined thin searchBtnIcon">
             search
           </span>
-        </div>
-      </div>
+        </button>
+      </form>
       {user ? <RightUser user={user} /> : <RightNotUser />}
     </div>
   );

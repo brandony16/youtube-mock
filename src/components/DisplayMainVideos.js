@@ -56,7 +56,7 @@ const DisplayMainVideos = () => {
             {
               params: {
                 key: apiKey,
-                part: "snippet,statistics",
+                part: "snippet,statistics,contentDetails",
                 id: videoIds.join(","),
               },
             }

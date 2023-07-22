@@ -9,7 +9,7 @@ const SearchPage = ({ user, isCollapsed, setIsCollapsed }) => {
     <div className="homePage">
       <Header user={user} setIsCollapsed={setIsCollapsed} />
       <div className="mainBody">
-        {isCollapsed ? (
+        {!isCollapsed ? (
           <Sidebar user={user} isHome={true} isCollapsed={isCollapsed} />
         ) : (
           <CollapsedSidebar isHome={true} />

@@ -12,6 +12,7 @@ const DisplaySearchResults = () => {
   useEffect(() => {
     const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
     const MAX_RESULTS = 10;
+    setVideos([]);
 
     const fetchVideos = async () => {
       try {
@@ -54,7 +55,7 @@ const DisplaySearchResults = () => {
           {
             params: {
               key: apiKey,
-              part: "snippet,statistics",
+              part: "snippet,statistics,contentDetails",
               id: videoIds.join(","),
             },
           }
@@ -87,13 +88,14 @@ const DisplaySearchResults = () => {
     };
 
     fetchVideos();
-  }, []);
+  }, [keyword]);
 
   return (
     <div className="searchResults">
       {videos.map((video) => (
         <SearchVideo key={video.etag + videos.indexOf(video)} video={video} />
       ))}
+      {loading && <div id="loading">Loading...</div>}
     </div>
   );
 };

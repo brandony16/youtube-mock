@@ -1,5 +1,6 @@
 import React from "react";
 import "../../styles/componentStyles/SearchVideo.css";
+import { NavLink } from "react-router-dom";
 
 const SearchVideo = ({ video }) => {
   const findHowLongAgo = () => {
@@ -40,14 +41,30 @@ const SearchVideo = ({ video }) => {
     }
   };
 
+  const formatDuration = (duration) => {
+    const timeRegex = /^PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?$/;
+    const matches = duration.match(timeRegex);
+  
+    const hours = parseInt(matches[1] || 0, 10);
+    const minutes = parseInt(matches[2] || 0, 10);
+    const seconds = parseInt(matches[3] || 0, 10);
+  
+    const formattedHours = hours > 0 ? hours.toString() : '';
+    const formattedMinutes = minutes > 0 || hours > 0 ? minutes.toString().padStart(2, "0") : '0';
+    const formattedSeconds = seconds.toString().padStart(2, "0");
+  
+    return `${formattedHours}${formattedHours ? ':' : ''}${formattedMinutes}:${formattedSeconds}`;
+  }
+
   return (
-    <div className="searchVideo">
+    <NavLink className="searchVideo" to={`/watch/${video.id}`}>
       <div className="searchThumbnailWrap">
         <img
           src={video.snippet.thumbnails.high.url}
           alt={video.snippet.title}
           className="searchThumbnail"
         />
+        <p className="videoDuration">{formatDuration(video.contentDetails.duration)}</p>
       </div>
       <div className="searchVideoInfo">
         <div className="topSearchInfo">
@@ -75,7 +92,7 @@ const SearchVideo = ({ video }) => {
           {video.snippet.description}
         </p>
       </div>
-    </div>
+    </NavLink>
   );
 };
 
