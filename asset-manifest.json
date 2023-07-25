@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/youtube-mock/static/css/main.2a5a82ad.css",
-    "main.js": "/youtube-mock/static/js/main.f1a4ec1c.js",
+    "main.js": "/youtube-mock/static/js/main.017403b4.js",
     "static/media/yt_logo_rgb_light.png": "/youtube-mock/static/media/yt_logo_rgb_light.a676ea31f6d4cf08b9d2.png",
     "static/media/yt-shorts-outline.png": "/youtube-mock/static/media/yt-shorts-outline.0b57b59145fded44c3f0.png",
     "index.html": "/youtube-mock/index.html",
     "main.2a5a82ad.css.map": "/youtube-mock/static/css/main.2a5a82ad.css.map",
-    "main.f1a4ec1c.js.map": "/youtube-mock/static/js/main.f1a4ec1c.js.map"
+    "main.017403b4.js.map": "/youtube-mock/static/js/main.017403b4.js.map"
   },
   "entrypoints": [
     "static/css/main.2a5a82ad.css",
-    "static/js/main.f1a4ec1c.js"
+    "static/js/main.017403b4.js"
   ]
 }
