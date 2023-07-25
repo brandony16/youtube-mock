@@ -43,7 +43,7 @@ const DisplayMainVideos = () => {
           setVideos([...videosWithDetails]);
           setIsLoaded(true);
         } catch (error) {
-          console.error("Error fetching videos:", error);
+          console.error("Error fetching videos - Main Videos:", error);
         } finally {
           setIsLoaded(true);
         }
@@ -86,7 +86,7 @@ const DisplayMainVideos = () => {
 
           return videos;
         } catch (error) {
-          console.error("Error fetching video details:", error);
+          console.error("Error fetching video details- Main Video:", error);
           return [];
         }
       };
