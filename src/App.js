@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from "./firebase/firebaseConfig";
 import HomePage from "./pages/HomePage";
@@ -25,13 +25,13 @@ const App = () => {
 
   return (
     <div>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<HomePage user={user} isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />}/>
           <Route path="/search/:keyword" element={<SearchPage user={user} isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />} />
           <Route path="/watch/:videoId" element={<VideoPage user={user} setIsCollapsed={setIsCollapsed}/>} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
