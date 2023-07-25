@@ -24,7 +24,6 @@ const App = () => {
   }, []);
 
   return (
-    <div>
       <HashRouter>
         <Routes>
           <Route path="/" element={<HomePage user={user} isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />}/>
@@ -32,7 +31,6 @@ const App = () => {
           <Route path="/watch/:videoId" element={<VideoPage user={user} setIsCollapsed={setIsCollapsed}/>} />
         </Routes>
       </HashRouter>
-    </div>
   );
 }
 
