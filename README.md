@@ -2,7 +2,7 @@
 
 Mock recreation of YouTube as part of The Odin Project's final JS project
  <br>
-[Go To Site](https://BabySparta.github.io/youtube-mock/) :point_left:
+[Go To Site](https://brandony16.github.io/youtube-mock/) :point_left:
 
 
 ## Features
